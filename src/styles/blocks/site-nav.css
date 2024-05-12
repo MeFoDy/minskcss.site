@@ -1,0 +1,36 @@
+.site-nav {
+    font-weight: bold;
+}
+
+.site-nav__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    list-style: none;
+}
+
+.site-nav__item {
+    display: block;
+    font-family: var(--font-serif);
+}
+
+.site-nav__item a {
+    display: inline-block;
+    padding: 0.25em 0;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.site-nav__item a:hover,
+.site-nav__item a:focus,
+.site-nav__item a:active {
+    text-decoration: underline;
+}
+
+@media (max-width: 1000px) {
+    .site-nav__item a {
+        padding: 0.5em 0;
+    }
+}

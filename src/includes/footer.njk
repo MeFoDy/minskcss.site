@@ -1,0 +1,22 @@
+<footer class="footer">
+    <div class="footer__info">
+        <dl class="footer__about">
+            <dt>{{ site.title }}</dt>
+        </dl>
+        <ul class="footer__social-list social-list">
+            <li class="social-list__item">
+                <a href="https://twitter.com/{{ site.twitter }}" rel="noopener" class="social-list__link social-list__link--twitter">Twitter</a>
+            </li>
+            <li class="social-list__item">
+                <a href="{{ site.paths.github }}" rel="noopener" class="social-list__link social-list__link--github">GitHub</a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer__technologies">
+        Сайт сделан при помощи <a href="https://www.11ty.dev/" rel="noopener">11ty</a>. Исходный код можно найти на <a href="{{ site.paths.github }}" rel="noopener">GitHub</a>.
+    </div>
+    <div class="footer__copyright">
+        &copy;
+        {{ helpers.currentYear() }} / {{ site.title }}
+    </div>
+</footer>

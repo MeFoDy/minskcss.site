@@ -1,0 +1,4 @@
+Sitemap: https://minskcss.site/sitemap.xml
+
+User-agent: *
+Allow: /
