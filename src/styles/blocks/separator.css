@@ -1,0 +1,10 @@
+.separator {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 744 / 40;
+    margin: 0 auto;
+    background-image: url('/images/separator.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}

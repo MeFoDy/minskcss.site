@@ -7,8 +7,7 @@
             {{ renderData.title or title }}{% if not isIndex %} | {{ site.title }}{% endif %}
         </title>
 
-        <meta name="color-scheme" content="dark light">
-        <meta name="theme-color" content="TODO:#ffcc00">
+        <meta name="color-scheme" content="light">
 
         <meta name="description" content="{{ description or site.description }}">
 
@@ -24,11 +23,12 @@
 
         <link rel="stylesheet" href="/styles/styles.css">
     </head>
+
     <body class="page__body">
 
         {% include 'header.njk' %}
 
-        <main class="page__content">
+        <main class="page__content container">
             {{ content | safe }}
         </main>
 

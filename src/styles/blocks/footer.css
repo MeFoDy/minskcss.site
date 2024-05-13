@@ -1,54 +1,38 @@
 .footer {
-    grid-column: 1 / -1;
-    padding: calc(2 * var(--line-space)) var(--line-space);
-    border-top: 1px solid var(--color-accent);
+    --separator-width: 480px;
+    color: var(--color-white);
+    background-color: var(--color-darkblue);
 }
 
 .footer a {
-    color: var(--color-link);
-    text-decoration-color: var(--color-accent);
+    color: var(--color-white);
+    text-decoration-color: var(--color-lightblue);
     text-decoration-thickness: 2px;
-}
-
-.footer a:visited {
-    color: var(--color-link-visited);
-}
-
-.footer a:hover {
-    background: var(--color-accent-alpha);
 }
 
 .footer__info {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    max-width: var(--main-column-width);
-    margin: 0 auto;
-    margin-bottom: calc(2 * var(--line-space));
-}
-
-.footer__about {
-    margin: 0;
-    margin-right: var(--line-space);
-    padding: 0;
-    font-family: var(--font-serif);
-}
-
-.footer__about dt {
-    font-weight: bold;
-}
-
-.footer__about dd {
-    margin: 0;
-    font-weight: 300;
+    flex-direction: column;
+    margin: var(--line-space) 0;
 }
 
 .footer__social-list {
-    min-width: max-content;
-    font-family: var(--font-serif);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    margin: 0;
+    margin-bottom: var(--line-space);
+    font-size: 0.75em;
+}
+
+.footer__separator {
+    width: var(--separator-width);
 }
 
 .footer__technologies {
+    margin-top: var(--line-space);
     margin-bottom: var(--line-space);
     font-weight: 300;
     font-size: 0.75em;
@@ -58,12 +42,22 @@
 .footer__copyright {
     font-weight: bold;
     font-size: 0.75em;
-    font-family: var(--font-serif);
     text-align: center;
 }
 
-@media (max-width: 750px) {
+@media (width < 600px) {
     .footer {
-        padding: calc(2 * var(--line-space)) var(--mobile-border-width);
+        --separator-width: 300px;
+    }
+}
+
+@media (width < 400px) {
+    .footer {
+        --separator-width: 100%;
+    }
+
+    .footer__social-list {
+        flex-direction: column;
+        gap: 1em;
     }
 }

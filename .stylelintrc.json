@@ -209,6 +209,7 @@
       "height",
       "min-height",
       "max-height",
+      "aspect-ratio",
       "inline-size",
       "min-inline-size",
       "max-inline-size",

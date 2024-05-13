@@ -1,5 +1,4 @@
 .social-list {
-    margin: 0;
     padding: 0;
     list-style: none;
 }
@@ -8,6 +7,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.25em;
+    text-decoration: none;
 }
 
 .social-list__link::before {
@@ -25,18 +25,14 @@
     --social-icon: url('/images/twitter-logo.svg');
 }
 
-.social-list__link--mastodon::before {
-    --social-icon: url('/images/mastodon-logo.svg');
+.social-list__link--tg::before {
+    --social-icon: url('/images/telegram-logo.svg');
 }
 
 .social-list__link--github::before {
-    --social-icon: url('/images/github-logo.svg');
+    --social-icon: url('/images/github-logo-light.svg');
 }
 
-.social-list__link--linkedin::before {
-    --social-icon: url('/images/linkedin-logo.svg');
-}
-
-.social-list__link--rss::before {
-    --social-icon: url('/images/rss-logo.svg');
+.social-list__link--youtube::before {
+    --social-icon: url('/images/youtube-logo.svg');
 }

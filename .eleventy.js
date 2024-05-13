@@ -13,6 +13,14 @@ module.exports = function (config) {
     );
     config.addPassthroughCopy('src/(robots|humans).txt');
 
+    // Collections
+
+    config.addCollection('withTags', function (collectionApi) {
+        return collectionApi.getAll().filter(function (item) {
+            return 'tags' in item.data;
+        });
+    });
+
     // Filters
 
     config.addFilter('readableDate', (d) => {
@@ -69,6 +77,14 @@ module.exports = function (config) {
         );
     });
 
+    config.addFilter('speakerTalks', (array, speakerId) => {
+        return array.filter((talk) => talk.data.speaker === speakerId);
+    });
+
+    config.addFilter('getEventName', (array, eventId) => {
+        return array.find((event) => event.data.id === eventId).data.name;
+    });
+
     // Transforms
 
     config.addTransform('htmlmin', require('./_11ty/transforms/htmlmin'));
@@ -107,8 +123,6 @@ module.exports = function (config) {
         templateFormats: ['njk', 'md'],
         trim: true,
     });
-
-    config.addPlugin(require('@hirusi/eleventy-plugin-safe-external-links'));
 
     config.addPlugin(require('./_11ty/plugins/img-prepare.js'));
 

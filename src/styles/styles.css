@@ -1,61 +1,41 @@
 /* Blocks */
 @import './blocks/page.css';
+@import './blocks/container.css';
+@import './blocks/separator.css';
 @import './blocks/header.css';
 @import './blocks/site-nav.css';
+@import './blocks/footer.css';
+@import './blocks/social-list.css';
 @import './blocks/collection.css';
 @import './blocks/talks.css';
 @import './blocks/talk.css';
-@import './blocks/footer.css';
-@import './blocks/social-list.css';
+@import './blocks/speaker.css';
 @import './blocks/error-page.css';
 
 /* Variables */
 :root {
-    --color-grey: #797676;
     --color-black: #000000;
     --color-white: #ffffff;
-    --color-lightgrey: #bebbbb;
-    --color-darkgrey: #514f4f;
-    --color-red: #ff4d00;
-    --color-accent: #ffcc00;
-    --color-accent-alpha: rgb(255 204 0 / 0.3);
-    --color-link: #665500;
-    --color-link-visited: #000000;
+    --color-darkblue: #266dba;
+    --color-blue: #2b7fc4;
+    --color-lightblue: #33aadc;
+    --color-grey: #777777;
+    --color-selection: pink;
+    --color-link: var(--color-blue);
+    --color-link-visited: var(--color-darkblue);
+    --color-bg: var(--color-white);
+    --color-text: var(--color-black);
+    --color-outline: var(--color-selection);
 
     --line-height: 1.42;
     --font-size: 20px;
     --line-space: calc(var(--line-height) * 1em);
-    --main-column-width: 700px;
-    --max-column-width: 1000px;
-    --mobile-border-width: 15px;
-
-    --transition-duration-s: 0.2s;
-    --transition-duration-l: 0.5s;
-    --transition-timing: ease;
+    --max-column-width: 960px;
+    --page-border-width: 20px;
+    --img-border-radius: 20px;
 
     --font-code: 'Fira Code', monospace;
-    --font-serif: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', 'P052', serif;
-    --font-sans-serif: system-ui, sans-serif;
-}
-
-:root {
-    --color-bg: var(--color-white);
-    --color-text: var(--color-black);
-    --color-subtext: var(--color-grey);
-    --color-outline: var(--color-red);
-    --color-code: var(--color-darkgrey);
-    --color-delimeter: var(--color-lightgrey);
-
-    --color-prism-bg: #fef9f3;
-    --color-prism-text: black;
-    --color-prism-comment: slategray;
-    --color-prism-punctuation: #999999;
-    --color-prism-boolean: #990055;
-    --color-prism-selector: #138512;
-    --color-prism-operator: #ab5f06;
-    --color-prism-keyword: #0077aa;
-    --color-prism-function: #c333a4;
-    --color-prism-variable: #e60101;
+    --font-sans-serif: 'Roboto', system-ui, sans-serif;
 }
 
 /* Global styles */
@@ -66,10 +46,17 @@
 
 ::selection {
     color: var(--color-text);
-    background: var(--color-accent);
+    background: var(--color-selection);
 }
 
-@media (max-width: 600px) {
+@media (width < 1000px) {
+    :root{
+        --page-border-width: 20px;
+        --max-column-width: 670px;
+    }
+}
+
+@media (width <= 760px) {
     :root {
         --font-size: 18px;
     }
